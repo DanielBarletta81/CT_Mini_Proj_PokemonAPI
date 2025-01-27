@@ -1,0 +1,31 @@
+.anton-sc-regular {
+    font-family: "Anton SC", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+  
+
+  .container-fluid {
+    font-family: "Sixtyfour Convergence", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "BLED" 0,
+      "SCAN" 0,
+      "XELA" 0,
+      "YELA" 0;
+   
+  }
+
+  #navbar {
+    background-image: radial-gradient(circle, #ffe62d, white);
+    margin-bottom: 25px;
+    padding: 10px;
+    border-color: red;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 25px;
+  }
