@@ -29,3 +29,14 @@
     border-style: solid;
     border-radius: 25px;
   }
+
+  .card {
+    background-image: radial-gradient(circle, #ffe62d, white);
+    margin-bottom: 25px;
+    padding: 10px;
+    border-color: red;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 25px;
+    box-shadow: #141414 10px 10px 10px;
+  }
