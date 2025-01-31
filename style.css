@@ -73,3 +73,26 @@
     border-radius: 15px;
     box-shadow: #141414 5px 10px 15px;
 }
+
+
+#pokemonModal, .modal-content {
+    background-image: radial-gradient(circle, #ffe62d, white);
+    margin-bottom: 25px;
+    padding: 10px;
+    color: black;
+    border-color: red;
+    border-width: 3px;
+
+    border-style: solid;
+    border-radius: 15px;
+    box-shadow:  blur(#141414 10px 20px 30px);
+}
+
+.modal-backdrop.show {
+    backdrop-filter: blur(5px);
+}
+
+/* Make the modal content slightly transparent */
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.9);
+}
