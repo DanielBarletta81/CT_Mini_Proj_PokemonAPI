@@ -36,21 +36,46 @@ async function displayTargetCharacters(pokeIdentifier) {
         const characterList = document.getElementById('display-card');
         characterList.innerHTML = ''; 
 
-        // Create container for cards
         const container = document.createElement('div');
-        container.className = 'd-flex gap-3';
+        container.className = 'd-flex gap-3 m-4 p';
 
-        // Pokemon image card
+        // Pokemon card with modal button
         const pokemonElement = document.createElement('div');
         pokemonElement.className = 'card p-3';
         pokemonElement.innerHTML = `
             <h2>${characterName}</h2>
-            <img src="${pokemonSprite}" alt="${characterName}" style="width: 150px; height: 150px;">
+            <img src="${pokemonSprite}" alt="${characterName}" style="width: 250px; height: 250px;">
+            <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#pokemonModal">
+                View Details
+            </button>
         `;
 
-
-
-        
+        // Modal element
+        const modalElement = document.createElement('div');
+        modalElement.innerHTML = `
+            <div class="modal fade" id="pokemonModal" tabindex="-1" aria-labelledby="pokemonModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content" style="box-shadow: 10px 20px 30px #141414;">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="pokemonModalLabel">${characterName} Details</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Height: ${data.height}</p>
+                            <p>Weight: ${data.weight}</p>
+                            <p>Base Experience: ${data.base_experience}</p>
+                            <h6>Types:</h6>
+                            <ul>
+                                ${data.types.map(type => `<li>${type.type.name}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
         // Abilities card
         const abilitiesElement = document.createElement('div');
         abilitiesElement.className = 'card p-3';
@@ -64,7 +89,7 @@ async function displayTargetCharacters(pokeIdentifier) {
         container.appendChild(pokemonElement);
         container.appendChild(abilitiesElement);
         characterList.appendChild(container);
-
+        document.body.appendChild(modalElement); // Add modal to body
     } catch (error) {
         console.error("Error fetching or displaying data:", error);
         const characterList = document.getElementById('display-card');
@@ -75,7 +100,6 @@ async function displayTargetCharacters(pokeIdentifier) {
         characterList.appendChild(errorElement);
     }
 }
-
 //  Add event listener to the search button 
 searchButton.addEventListener("click", async (e) => {
     e.preventDefault();

@@ -10,43 +10,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton+SC&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/975c6c39b0.js" crossorigin="anonymous"></script>
+    
     <link rel="stylesheet" href="style.css">
 </head>
+This HTML code represents the structure and layout of a Pokémon-themed website. It includes a navigation bar, two cards displaying information about the Pokémon list and training programs, and a contact form. The code utilizes Bootstrap CSS framework for styling and layout.
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">PokeMon API</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbar-collapse">
-            <ul class="nav nav-pills nav-fill ">
-              
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                <a class="nav-link" href="/search.html">Pokemon</a>
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  PokeMon Actions
-                </a>
-
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Pokemon Trade</a></li>
-                  <li><a class="dropdown-item" href="#">Pokemon Search</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Battles</a></li>
-                  <li><a class="dropdown-item" href="#">Training</a></li>
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+          Pokemon A.P.I.
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-lg-0" id="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pokemon List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/search.html">Search Pokemon</a>
+                    </li>
                 </ul>
-              </li>
-             
-            </ul>
-        </div>
-        </div>
-       
          
-        </div>
-      </nav>
-
-
+            </div>
+  </div>
+</nav>
   <div class="container text-center">
      
 
@@ -54,10 +46,10 @@
           <div class="card" id="top-card">
             <img src="img/pokeLeaves.jpg" class="card-img-top" alt="pikachu">
             <div class="card-body">
-              <h5 class="card-title">Search PokeMon</h5>
+              <h5 class="card-title">PokeMon List</h5>
               <p class="card-text">Check out the full list of PokeMon characters and their stats!</p>
               </p>
-              <button href="#search.html" class="btn btn-outline-primary">Search</button>
+              <button href="#allPoke.html" class="btn btn-warning">Search</button>
             </div>
           </div>
         </div>
@@ -143,6 +135,8 @@
       </div>  
     </footer>
     <script src="/search.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/975c6c39b0.js" crossorigin="anonymous"></script>
     </body>
 </html>
 
@@ -164,3 +158,6 @@ Display the Pokémon's name, image, type, and basic stats (e.g., HP, Attack, Def
  
  
  -->
+
++ This HTML code represents the structure and layout of a Pokémon-themed website. It includes a navigation bar, two cards displaying information about the Pokémon list and training programs, and a contact form. The code utilizes Bootstrap CSS framework for styling and layout.
++ 
