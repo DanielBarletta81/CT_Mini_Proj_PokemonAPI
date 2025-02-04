@@ -9,29 +9,41 @@
     background-image: url('../img/bg_ball.jpg');
     background-color: #ffffff; /* fallback */
 }
-  .navbar-brand {
+      .navbar-brand {
+        background-color: black;
+        display: flex;
+        align-items: center;
+        font-size: 2.5rem;
+        padding: 15px 25px;
+        margin-left: 25px;
         font-family: "Bona Nova SC", serif;
         font-weight: 900;
-        font-size: 40px;
-        text-shadow: #f10505 3px 6px 10px;
+        text-shadow: #f10505 3px 12px 18px;
         border: 2px solid rgb(112, 110, 110);
         border-radius: 15px;
         box-shadow: blur( 2px 5px 10px red);
         color: #141414;
-        padding: 5px 10px;
+      }
+
+      .navbar-brand img {
+        width: 75px;
+        height: 75px;
+        margin-right: 15px;
+        border-radius: 25px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
       }
 
       .navbar-brand--link {
-        background-color: aliceblue;
+        background-color: rgb(5, 5, 5);
         border: 1px solid rgb(247, 4, 4);
         border-radius: 25px;
       }
 
       .navbar {
         box-shadow: 0 10px 20px rgba(0,0,0,.1);
-    }
+      }
 
-    #nav-list {
+      #nav-list {
         width: 100%;
         justify-content: space-evenly;
         align-items: center;
@@ -67,7 +79,8 @@
   
 
   .container-fluid {
-    margin-bottom: 25px;
+   
+    margin-bottom: 50px;
     padding: 10px;
     border: 15px groove rgba(248, 250, 112, 0.999);
     background-image: radial-gradient(circle, #ffe62d, white);
@@ -83,7 +96,7 @@
    
   }
 
-  #navbar-collapse.navbar-collapse.navbar-collapse, a.nav-link , a.nav-link.active{
+  #navbarContent, a.nav-link , a.nav-link.active{
    
     font-size: 24px;
     color: #141414;
@@ -96,7 +109,7 @@
     box-shadow: 2px 5px 10px red;
   }
 
-  .card {
+  .card, #display-card, #pokemonModal .modal-content {
     background-image: radial-gradient(circle, #ffe62d, white);
     margin-top: 50px;
     margin-bottom: 50px;
@@ -109,49 +122,190 @@
     backdrop-filter: blur(10px);
   }
 
-  #navbar-collapse.navbar-collapse.navbar-collapse {
-    
-   color: rgb(254, 239, 233);
-    padding: 10px;
-    border-color: red;
-    border-width: 2px
-
+  .contact {
+    color: white;
+    background-color: #141414;
+    align-self: center;
   }
 
-  
-.pokemon-sprite {
-    border: #141414 2px solid;
-    width: 350px;
-    height: 350px;
-    border-radius: 15px;
-    box-shadow: #141414 5px 10px 15px;
+  .card-container {
+    display: flex;
+    width: 100vw;
+    height: 50vh;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.character-card,
+.abilities-card {
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;
 }
 
 
+  #details-button {
+    background-image: radial-gradient(circle, #ffe62d, white);
+    color: #141414;
+    border-color: #141414;
+    border-radius: 15px;
+    box-shadow: 2px 5px 10px red;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  #details-button:hover {
+    background-image: radial-gradient(circle, #080808, rgb(238, 17, 17));
+    color: #fbfafa;
+    border-color: #141414;
+    border-radius: 15px;
+    box-shadow: 2px 5px 10px red;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    scale: 1.1;
+    transition: background-color 0.3s ease;
+  }
+
+  .h1{
+    color: #ffffff;
+    font-size: 24px;
+    font-family: "Sixtyfour Convergence", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "BLED" 0,
+      "SCAN" 0,
+      "XELA" 0,
+      "YELA" 0;
+      text-shadow: 2px 5px 10px red;
+  }
+
+  
+
+  button.navbar-toggler {
+    background-color: #141414;
+    border-color: #141;
+    border-radius: 15px;
+    box-shadow: 2px 5px 10px red;
+    font-size: 24px;
+    padding: 15px 25px;
+    margin: 10px;
+}
+
+.navbar-toggler-icon {
+    width: 2em;
+    height: 2em;
+}
+
+@media (max-width: 768px) {
+    button.navbar-toggler {
+        font-size: 20px;
+        padding: 12px 20px;
+    }
+}
+
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.15);
+}
+
+.pokemon-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+#poke-name {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  word-wrap: break-word;
+  width: 100%;
+  color: #141414;
+  padding: 10px;
+  border: #f20909 1px 1px 1px;
+  
+}
+
+#poke-name:hover {
+  color: #f20909;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border-color: #141414;
+}
 #pokemonModal, .modal-content {
     background-image: radial-gradient(circle, #ffe62d, white);
     margin-bottom: 25px;
     padding: 10px;
     color: black;
-    border-color: red;
-    border-width: 3px;
+}
 
-    border-style: solid;
+.modal-content {
+    background-image: radial-gradient(circle, #ffe62d, white);
+    border: 3px solid red;
     border-radius: 15px;
-    box-shadow:  blur(#141414 10px 20px 30px);
 }
 
 .modal-backdrop.show {
     backdrop-filter: blur(5px);
 }
 
-/* Make the modal content slightly transparent */
-.modal-content {
-    background-color: rgba(255, 255, 255, 0.9);
+.modal-header {
+    border-bottom: 2px solid red;
 }
 
+.modal-title {
+    font-family: "Smooch Sans", serif;
+    font-size: 2rem;
+    color: #141414;
+}
+
+.pokemon-modal-image {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+}
+
+.stats-container {
+    width: 100%;
+    text-align: center;
+}
 :root {
     --primary-gradient: radial-gradient(circle, #ffe62d, white);
     --border-red: rgb(247, 4, 4);
     --box-shadow-default: #f20909 10px 20px 30px;
+}
+
+.display-card {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.pokemon-card {
+    min-width: 300px;
+    max-width: 45%;
+    height: fit-content;
+}
+
+.card:hover {
+    background-image: radial-gradient(circle, #fff201, rgba(0, 0, 9, 0.618));
+    color: #f6fa17;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
 }

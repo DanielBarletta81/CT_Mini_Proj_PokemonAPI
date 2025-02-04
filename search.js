@@ -37,15 +37,13 @@ async function displayTargetCharacters(pokeIdentifier) {
         characterList.innerHTML = ''; 
 
         const container = document.createElement('div');
-        container.className = 'd-flex gap-3 m-4 p';
+        container.className = 'display-card d-flex flex-wrap justify-content-between align-items-stretch w-100 h-50';
 
-        // Pokemon card with modal button
         const pokemonElement = document.createElement('div');
-        pokemonElement.className = 'card p-3';
-        pokemonElement.innerHTML = `
-            <h2>${characterName}</h2>
-            <img src="${pokemonSprite}" alt="${characterName}" style="width: 250px; height: 250px;">
-            <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#pokemonModal">
+        pokemonElement.className = 'pokemon-card card flex-grow-1 m-2';        pokemonElement.innerHTML = `
+            <h2 id="poke-name">${characterName}</h2>
+            <img id= "sprite-img"src="${pokemonSprite}" alt="${characterName}">
+            <button id="details-button" type="button" class="btn  mt-2" data-bs-toggle="modal" data-bs-target="#pokemonModal">
                 View Details
             </button>
         `;
@@ -101,15 +99,23 @@ async function displayTargetCharacters(pokeIdentifier) {
     }
 }
 //  Add event listener to the search button 
-searchButton.addEventListener("click", async (e) => {
-    e.preventDefault();
-    const searchValue = searchInput.value;
-    if (searchValue) {
-        console.log("Search value:", searchValue);
-        const pokeIdentifier = searchValue.toLowerCase();
-        await displayTargetCharacters(pokeIdentifier);
-    }
-});
+    searchButton.addEventListener("click", async (e) => {
+        e.preventDefault();
+        const searchValue = searchInput.value;
+    
+        if (searchValue) {
+            try {
+                console.log("Search value:", searchValue);
+                const pokeIdentifier = searchValue.toLowerCase();
+                await displayTargetCharacters(pokeIdentifier);
+            } catch (error) {
+                console.error("Failed to fetch Pokemon:", error);
+                // Add user-friendly error message display
+            }
+        } else {
+            // Add validation feedback for empty search
+        }
+    });
 
 
 
