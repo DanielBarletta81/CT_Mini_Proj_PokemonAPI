@@ -1,4 +1,4 @@
-/.txt
+*.txt
 
 notes.txt 
 
@@ -6,7 +6,7 @@ notes.txt
 
 .jpg
 
-/node_modules
+node_modules
 
 /.vscode
 
